@@ -1,0 +1,143 @@
+$primary-color: #ffd300;
+
+@mixin side($color:none, $width:50%) {
+    height: 500px;
+    width: $width;
+    background-color: $color;
+}
+
+@mixin button($background: none) {
+    width: 100%;
+    background-color: $background;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 0.5vw 0;
+    border-radius: 5px;
+}
+
+.navbarLogin{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    .tags {
+        display: flex;
+        margin: 10px 0;
+    
+        .tag {
+            text-decoration: none;
+            padding: 5px 10px;
+            border: solid 1px $primary-color;
+            color: $primary-color;
+            border-radius: 20px;
+            transition: 0.2s;
+            font-weight: bold;
+    
+            &:hover {
+                background: $primary-color;
+                color: white;
+            }
+        }
+    
+        .tag+.tag {
+            margin-left: 10px;
+        }
+    }
+    
+}
+
+.content {
+    display: flex;
+    margin-top: 5vw;
+
+    .sideLeft {
+        @include side();
+        padding: 3% 12%;
+
+        p {
+            line-height: 1vw;
+            font-size: 1vw;
+        }
+
+        h1 {
+            line-height: 2.4vw;
+            font-size: 2.4vw;
+            font-weight: bold;
+            color: $primary-color;
+        }
+
+        form {
+
+            .box{
+                border: 1px solid grey;
+                border-radius: 5px;
+                padding: 7px 10px;
+                input{
+                    border: none;
+                }
+                input:focus{
+                    outline: none;
+                }
+            }
+
+            .inputForm {
+                width: 100%
+            }
+
+            .submitButton {
+                @include button($primary-color);
+            }
+
+            .button{
+                display: flex;
+                margin-top: 1vw;
+                align-items: center;
+                justify-content: center;
+                @include button(black);
+                img{
+                    height: 30px;
+                }
+                a {
+                    display: block;
+                    margin-left: 10px;
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+
+            .side {
+                margin-top: 5px;
+                display: flex;
+                justify-content: space-between;
+
+                .start {
+                    display: flex;
+                }
+
+                a,
+                p {
+                    text-decoration: none;
+                    font-size: 10px
+                }
+            }
+
+        }
+
+        .join{
+            margin-top: 2vw;
+            text-align: center;
+
+            span{
+                color: blue;
+            }
+        }
+    }
+
+    .sideRight {
+        @include side();
+        img{
+            max-width:100%;
+
+        }
+    }
+}

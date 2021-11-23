@@ -1,0 +1,10 @@
+$sidebar-bg-color: white !default;
+$sidebar-color: Black !default;
+$submenu-bg-color: white !default;
+$submenu-bg-color-collapsed: black !default;
+$highlight-color: grey !default;
+@import "~bootstrap/scss/bootstrap";
+@import "./scss/login";
+@import "./scss/landingPage";
+@import "./scss/main";
+@import '~react-pro-sidebar/dist/scss/styles.scss';
